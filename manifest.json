@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+
+  "name": "Yomimashou",
+  "description": "A manga reader",
+  "version": "0.0.1",
+
+  "applications": {
+    "gecko": {
+      "id": "yomimashou@mozilla.org"
+    }
+  },
+
+  "browser_action": {
+     "default_popup": "popup.html",
+     "default_title": "Yomimashou"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+
+  "content_scripts": [
+    {
+      "js": ["extension.js"],
+      "css": ["extension.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "permissions":[
+    "tabs",
+    "storage",
+    "alarms",
+    "notifications",
+    "<all_urls>"
+  ]
+}
